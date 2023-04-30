@@ -97,37 +97,37 @@
 
 % НАЧАЛО ТИТУЛЬНОГО ЛИСТА
 \begin{center}
-\large{\textsc{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ
-УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ}
-}\\
-\large{\textsc{МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ имени М.В. ЛОМОНОСОВА}
-} \\
- \vspace{0.4cm}
-\large{\textsc{МЕХАНИКО - МАТЕМАТИЧЕСКИЙ ФАКУЛЬТЕТ}}\\
-\vspace{0.4cm}
-\large{\textsc{КАФЕДРА ПРИКЛАДНОЙ МЕХАНИКИ И УПРАВЛЕНИЯ}}\\
-\hfill \break
+    \large{\textsc{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ
+            УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ}
+    }\\
+    \large{\textsc{МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ имени М.В. ЛОМОНОСОВА}
+    } \\
+    \vspace{0.4cm}
+    \large{\textsc{МЕХАНИКО - МАТЕМАТИЧЕСКИЙ ФАКУЛЬТЕТ}}\\
+    \vspace{0.4cm}
+    \large{\textsc{КАФЕДРА ПРИКЛАДНОЙ МЕХАНИКИ И УПРАВЛЕНИЯ}}\\
+    \hfill \break
 
-\hfill \break
-\large{\textbf{ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА}\\
-(ДИПЛОМНАЯ РАБОТА) \\ МАГИСТРА \\
-\hfill \break \textsc{\textbf{ВОССТАНОВЛЕНИЕ ЧЕЛОВЕКОМ ИСХОДНОЙ ПОЗЫ ПОСЛЕ ТОЛЧКА}
-}}
+    \hfill \break
+    \large{\textbf{ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА}\\
+        (ДИПЛОМНАЯ РАБОТА) \\ МАГИСТРА \\
+        \hfill \break \textsc{\textbf{ВОССТАНОВЛЕНИЕ ЧЕЛОВЕКОМ ИСХОДНОЙ ПОЗЫ ПОСЛЕ ТОЛЧКА}
+        }}
 \end{center}
- 
+
 \vspace{1.5cm}
 \begin{flushright}
-\large{
-Выполнил: студент группы М - 2 \\ Романов Андрей Владимирович} \\ \vspace{0.68cm}  \underline{\hspace{6.5cm}} \\ 
- (подпись студента)
+    \large{
+        Выполнил: студент группы М - 2 \\ Романов Андрей Владимирович} \\ \vspace{0.68cm}  \underline{\hspace{6.5cm}} \\
+    (подпись студента)
 
 \end{flushright}
- 
+
 \begin{flushright}
-\large{
-Научный руководитель: \\ к.ф.-м.н., доцент Кручинин Павел Анатольевич} \\ \vspace{0.68cm}
- \underline{\hspace{6.5cm}} \\
- (подпись научного руководителя)
+    \large{
+        Научный руководитель: \\ к.ф.-м.н., доцент Кручинин Павел Анатольевич} \\ \vspace{0.68cm}
+    \underline{\hspace{6.5cm}} \\
+    (подпись научного руководителя)
 \end{flushright}
 \vspace{0.7cm}
 \begin{center} \large{Москва \\  2023} \end{center}
@@ -135,7 +135,7 @@
 
 
 \thispagestyle{empty} % выключаем отображение номера для этой страницы
- \normalsize{
+\normalsize{
 % КОНЕЦ ТИТУЛЬНОГО ЛИСТА
 \newpage
 
@@ -177,7 +177,7 @@
 \end{figure}
 \todo[inline]{Картинку перерисовать с акутальными данными}
 В качестве математической модели
-используется традиционно модель «перевернутого маятника»\cite{PAKrychinin,kasatkin,gurfincel}. 
+используется традиционно модель «перевернутого маятника»\cite{PAKrychinin,kasatkin,gurfincel}.
 
 
 \textbf{Целью работы} является разработка алгоритма управления изменением позы человека, основанного на решении задачи оптимального быстродействия,
@@ -190,7 +190,7 @@
 Решение это задачи может быть применено как в медицине, для оценки оптимальности работы мышщ человека, так и при разработке протезов, иммитирующих работу мышщ.
 
 \textbf{Задачи работы: }
-\begin{itemize} 
+\begin{itemize}
     \item Описание математической модели
     \item Постановка задачи быстродействия, используя принцип максимума Понтрягина
     \item Поиск решения задачи быстродействия
@@ -199,25 +199,25 @@
     \item Сравнение реального и оптимального времени возвращения в исходную позу
     \item Сравнение реальной и оптимальной траектории возварщения в исходную позу
     \item Интерпретация полученных результатов
-\end{itemize} 
+\end{itemize}
 
-\textbf{Методы исследования:} 
-\begin{itemize} 
+\textbf{Методы исследования:}
+\begin{itemize}
     \item Движение человека в саггительной плоскости описывается моделью перевернутого маятника.
     \item Для описание движения используется система обыкновенных дифференциальных уравнений с постоянными коэффицентами 3 порядка.
     \item Начальные условия для задачи быстродействия определяются с данных эксперимента, в ходе которого на человека оказывают толкающее воздействие.
     \item Проводится графическое моделирование в математических пакетах Matlab и Wolfram Mathematica.
-\end{itemize} 
+\end{itemize}
 
 
 
 
-\textbf{Объем и структура работы.} Работа состоит из введения, трех глав и заключения. Полный объем работы составляет 61 страницу, включая 69 рисунков и 1 таблицу. Список литературы содержит 17 наименований. 
+\textbf{Объем и структура работы.} Работа состоит из введения, трех глав и заключения. Полный объем работы составляет 61 страницу, включая 69 рисунков и 1 таблицу. Список литературы содержит 17 наименований.
 
 \newpage
 
 \chapter{Математическая модель и решение задачи быстродействия}
-\section{Математическая модель} 
+\section{Математическая модель}
 Для описания движения тела человека в сагиттальной плоскости используем традиционную модель перевернутого маятника (см. рисунок \ref{fig:pendulum}).
 
 \begin{figure}[h!]
@@ -602,13 +602,13 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
 \end{equation}
 
 Полученную систему \eqref{fullchanged} можно решить численно, подставив вместо $\Omega_0$ и $u_\ast$ конкретные значения.
-Отбор корней проводим из условия, что $x>1,y>1,z>1$. 
+Отбор корней проводим из условия, что $x>1,y>1,z>1$.
 Но также стоит провести дальнейший анализ для поиска аналитического решения.
 \section{Поиск аналитического решения}
 
 \begin{equation}\label{fullchanged1}
     \left\{ {\begin{aligned}
-                 & y=zx, \hfill                                                                                                              \\
+                 & y=zx, \hfill                                                                                                                                 \\
                  & (\Omega_0-u_*)\left( x^2z-\frac{x}{zx}\right)+u_*\left(\frac{x^3}{zx}-\frac{zx}{x}-\frac{2x^2}{zx}+2zx\right)+\frac{x}{zx}+x^2z=0, \hfill    \\
                  & (\Omega_0-u_*)\left( x^2z+\frac{x}{zx}\right)+u_*\left(\frac{x^3}{zx}+\frac{zx}{x}+\frac{2x^2}{zx}+2zx-4x\right)-\frac{x}{zx}+x^2z=0. \hfill \\
             \end{aligned}} \right.
@@ -622,20 +622,20 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
 Сложим и вычтем уравнения системы
 \begin{equation}\label{fullchanged2}
     \left\{ {\begin{aligned}
-                 & 2(\Omega_0-u_*)x^2z+u_*\left(2\frac{x^2}{z}+4zx-4x\right)+2x^2z=0, \hfill    \\
-                 & 2(\Omega_0-u_*)\frac{1}{z}+u_*\left(2z+\frac{4x}{z}-4x\right)-\frac{2}{z}=0. \hfill    \\
+                 & 2(\Omega_0-u_*)x^2z+u_*\left(2\frac{x^2}{z}+4zx-4x\right)+2x^2z=0, \hfill           \\
+                 & 2(\Omega_0-u_*)\frac{1}{z}+u_*\left(2z+\frac{4x}{z}-4x\right)-\frac{2}{z}=0. \hfill \\
             \end{aligned}} \right.
 \end{equation}
 \begin{equation}\label{fullchanged2}
     \left\{ {\begin{aligned}
-                 & 2(\Omega_0-u_*)x^2z+u_*\left(2\frac{x^2}{z}+4zx-4x\right)+2x^2z=0, \hfill    \\
-                 & 2(\Omega_0-u_*)\frac{1}{z}+2u_*z+4x\left(\frac{u_*}{z}-u_*\right)-\frac{2}{z}=0. \hfill    \\
+                 & 2(\Omega_0-u_*)x^2z+u_*\left(2\frac{x^2}{z}+4zx-4x\right)+2x^2z=0, \hfill               \\
+                 & 2(\Omega_0-u_*)\frac{1}{z}+2u_*z+4x\left(\frac{u_*}{z}-u_*\right)-\frac{2}{z}=0. \hfill \\
             \end{aligned}} \right.
 \end{equation}
 \begin{equation}\label{fullchanged2}
     \left\{ {\begin{aligned}
-                 & 2(\Omega_0-u_*)x^2z+u_*\left(2\frac{x^2}{z}+4zx-4x\right)+2x^2z=0, \hfill    \\
-                 & x=\left( \frac{1}{2z}-\frac{u_*z}{2}-(\Omega_0-u_*)\frac{1}{2z}\right)\frac{z}{u_*(1-z)} \hfill    \\
+                 & 2(\Omega_0-u_*)x^2z+u_*\left(2\frac{x^2}{z}+4zx-4x\right)+2x^2z=0, \hfill                       \\
+                 & x=\left( \frac{1}{2z}-\frac{u_*z}{2}-(\Omega_0-u_*)\frac{1}{2z}\right)\frac{z}{u_*(1-z)} \hfill \\
             \end{aligned}} \right.
 \end{equation}
 \[
@@ -643,14 +643,14 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
 \]
 \begin{equation}\label{fullchanged2}
     \left[ {\begin{aligned}
-                 & \left(u_* \left(z^2-1\right)+\Omega _0-1\right)=0, \hfill    \\
-                 & -u_* \left(z^4+\Omega _0 \left(z^2-1\right)^2\right)+u_*^2 (z-1)^4+u_*-\Omega _0^2 z^2+z^2=0 \hfill    \\
+                 & \left(u_* \left(z^2-1\right)+\Omega _0-1\right)=0, \hfill                                           \\
+                 & -u_* \left(z^4+\Omega _0 \left(z^2-1\right)^2\right)+u_*^2 (z-1)^4+u_*-\Omega _0^2 z^2+z^2=0 \hfill \\
             \end{aligned}} \right.
 \end{equation}
 \begin{equation}\label{fullchanged2}
     \left[ {\begin{aligned}
-                 & u_*z^2+\Omega _0-1-u_*=0, \hfill    \\
-                 & (-u_* \Omega _0+u_*^2-u_*)z^4-4 u_*^2z^3+(2 u_* \Omega _0+6 u_*^2-\Omega _0^2+1)z^2-4 u_*^2z+-u_* \Omega _0+u_*^2+u_*=0 \hfill    \\
+                 & u_*z^2+\Omega _0-1-u_*=0, \hfill                                                                                               \\
+                 & (-u_* \Omega _0+u_*^2-u_*)z^4-4 u_*^2z^3+(2 u_* \Omega _0+6 u_*^2-\Omega _0^2+1)z^2-4 u_*^2z+-u_* \Omega _0+u_*^2+u_*=0 \hfill \\
             \end{aligned}} \right.
 \end{equation}
 
@@ -667,7 +667,7 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
 и стабилоанализатора, поэтому определять начальные условия будем на основе данных с саггитальной стабилограммы и силомера.
 
 Рассмотрим силы действующие на модель стержня, иммитирующего тело человека (см. рисунок \ref{fig:pendulum})
- и силы действующие на систему «стопы ног – платформа стабилоанализатора».
+и силы действующие на систему «стопы ног – платформа стабилоанализатора».
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{foot.png}
@@ -681,32 +681,32 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
 Ниже представлена система уравнений соответствующая рисунку \ref{fig:pendulum}
 \begin{equation}\label{bodyforces}
     \left\{ {\begin{aligned}
-                 & ml\ddot{\theta} = -R_y-F , \hfill   \\
-                 & 0=R_z-mg, \hfill \\
-                 & J \ddot{\theta} = mlg\sin \theta-Fl_1\cos \theta+M_x . \hfill             \\
+                 & ml\ddot{\theta} = -R_y-F , \hfill                             \\
+                 & 0=R_z-mg, \hfill                                              \\
+                 & J \ddot{\theta} = mlg\sin \theta-Fl_1\cos \theta+M_x . \hfill \\
             \end{aligned}} \right.
 \end{equation}
 Проведем линеаризацию по $\theta$ в окрестности нуля
 \begin{equation}\label{bodyforces}
     \left\{ {\begin{aligned}
-                 & ml\ddot{\theta} = -R_y-F , \hfill   \\
-                 & 0=R_z-mg, \hfill \\
-                 & J \ddot{\theta} = mlg\theta-Fl_1+M_x . \hfill             \\
+                 & ml\ddot{\theta} = -R_y-F , \hfill             \\
+                 & 0=R_z-mg, \hfill                              \\
+                 & J \ddot{\theta} = mlg\theta-Fl_1+M_x . \hfill \\
             \end{aligned}} \right.
 \end{equation}
 Ниже представлена система уравнений соответствующая рисунку \ref{fig:foot-platform}
 \begin{equation}\label{footforces}
     \left\{ {\begin{aligned}
-                 & M_x = Ny+F_yh , \hfill   \\
-                 & F_y = R_y , \hfill \\
-                 & N \approx mg . \hfill             \\
+                 & M_x = Ny+F_yh , \hfill \\
+                 & F_y = R_y , \hfill     \\
+                 & N \approx mg . \hfill  \\
             \end{aligned}} \right.
 \end{equation}
 
 Из \eqref{bodyforces} и \eqref{footforces} выразим $M_x$
 $$M_x=mgy-h\left(F+ml\ddot{\theta}\right)$$
 
-$$\left(J+mlh\right)\ddot{\theta}=mgl\theta+mgy-Fl_1-Fh$$ 
+$$\left(J+mlh\right)\ddot{\theta}=mgl\theta+mgy-Fl_1-Fh$$
 
 
 $$\frac{(J+mlh)l\ddot{\theta}}{mgl}=l\theta+y-\frac{F}{mg}(l_1+h);\quad $$
@@ -753,60 +753,109 @@ $$\text{Замена: }\eta=-l\theta; \quad T^2=\frac{J+mlh}{mgl};$$
 с периодом $T\approx2c$
 \begin{figure}[h!]
     \begin{center}
-    \begin{minipage}[h]{0.48\linewidth}
-    \includegraphics[width=1\linewidth]{push_model.eps}
-    \caption{Пример зависимости \break $F(t)=5(1-\cos(4\pi\cdot2.5t))$}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[h]{0.48\linewidth}
-    \includegraphics[width=1\linewidth]{eta_model.eps}
-    \caption{Модельное движение центра масс и центра давления}
-    \end{minipage}
+        \begin{minipage}[h]{0.48\linewidth}
+            \includegraphics[width=1\linewidth]{push_model.eps}
+            \caption{Пример зависимости \break $F(t)=5(1-\cos(4\pi\cdot2.5t))$}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[h]{0.48\linewidth}
+            \includegraphics[width=1\linewidth]{eta_model.eps}
+            \caption{Модельное движение центра масс и центра давления}
+        \end{minipage}
     \end{center}
-    \end{figure}
+\end{figure}
 
 Восстановим $\eta$ двумя способами
 \begin{figure}[h!]
     \begin{center}
-    \begin{minipage}[h]{0.48\linewidth}
-    \includegraphics[width=1\linewidth]{eta_restore_fur_model.eps}
-    \caption{Восстановление через преобразование Фурье}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[h]{0.48\linewidth}
-    \includegraphics[width=1\linewidth]{double_filter_model.eps}
-    \caption{Восстановление через двойную фильтрацию}
-    \end{minipage}
+        \begin{minipage}[h]{0.48\linewidth}
+            \includegraphics[width=1\linewidth]{eta_restore_fur_model.eps}
+            \caption{Восстановление через преобразование Фурье}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[h]{0.48\linewidth}
+            \includegraphics[width=1\linewidth]{double_filter_model.eps}
+            \caption{Восстановление через двойную фильтрацию}
+        \end{minipage}
     \end{center}
-    \end{figure}
+\end{figure}
 
 Оценим полученные ошибки при восстановлении
 
 \begin{figure}[h!]
     \begin{center}
-    \begin{minipage}[h]{0.48\linewidth}
-    \includegraphics[width=1\linewidth]{err_furier_model.eps}
-    \caption{Ошибка восстановления через преобразвоание Фурье ,rmse=0.0761}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[h]{0.48\linewidth}
-    \includegraphics[width=1\linewidth]{err_double_filter_model.eps}
-    \caption{Восстановление через двойную фильтрацию, rmse=0.0061}
-    \end{minipage}
+        \begin{minipage}[h]{0.48\linewidth}
+            \includegraphics[width=1\linewidth]{err_furier_model.eps}
+            \caption{Ошибка восстановления через преобразвоание Фурье ,rmse=0.0761}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[h]{0.48\linewidth}
+            \includegraphics[width=1\linewidth]{err_double_filter_model.eps}
+            \caption{Восстановление через двойную фильтрацию, rmse=0.0061}
+        \end{minipage}
     \end{center}
-    \end{figure}
+\end{figure}
 
 \todo[inline]{ошибка/макс модуль отклонения}
 
 Погрешности обоих методов очень небольшие, почти идеально восстанавливают исходную траекторию центра масс
 
 \section{Анализ данных со стабилоанализатора и силомера}
-массу, оценка времени где толчки были, сила
+\todo[inline]{оценка времени где толчки были, сила берем крутой/пологий спуск}
 
-берем крутой/пологий спуск
+Оценим массу, на рисунках \ref{mass_full_time} и
+\ref{mass_short_time} представлены графики показаний массы испытуемого человека
+
+\begin{figure}[h!]
+    \begin{center}
+        \begin{minipage}[h]{0.46\linewidth}
+            \includegraphics[width=1\linewidth]{mass_full_time.eps}
+            \caption{Масса на всем интервале наблюдений}
+            \label{mass_full_time}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[h]{0.46\linewidth}
+            \includegraphics[width=1\linewidth]{mass_concrete.eps}
+            \caption{Масса на интервале исследуемых толчков}
+            \label{mass_short_time}
+        \end{minipage}
+    \end{center}
+\end{figure}
+
+Среднее значение рассчитаем по рисунку \ref{mass_short_time}, $m=67.8$кг
+
+Проанализируем силу толчков (см. рис. \ref{pushes_real}), сила толчка колеблется от 2 до 8 Н,
+в первую очередь возьмем толчки большей силы, так как на них предположительно лучше удастся провести исследование.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{pushes_real.eps}
+    \caption{Силовое воздействие на этапе наблюдения}
+    \label{pushes_real}
+\end{figure}
+
+
 
 \section{Применение алгоритмов фильтрации к экспериментальным данным}
-картинки с результатами применения фильтра
+Рассмотрим один конкретный толчок(около момента времени 1120) и для него применим два способа
+фильтрации (см. рис. \ref{restore_double_real} и \ref{restore_fur_real})
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.65\linewidth]{restore_eta_double_real.eps}
+    \caption{Восстановление с использованием двойной фильтрации}
+    \label{restore_double_real}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.65\linewidth]{restore_eta_fur_real.eps}
+    \caption{Восстановление с использованием преобразования Фурье}
+    \label{restore_fur_real}
+\end{figure}
+
+Визуально видно, что ожидаемая и полученная траектория центра масс совпадают,
+без каких-либо аномальных отклонений
 
 \section{Оценка начальных условий в моменты завершения толчков}
 посчитанные данные для нескольких толчков
@@ -817,7 +866,7 @@ $$\text{Замена: }\eta=-l\theta; \quad T^2=\frac{J+mlh}{mgl};$$
 
 \chapter{Анализ полученных решений задачи быстродействия}
 
-\section{Сравнение траекторий и времени возвращения для выборки толчков} 
+\section{Сравнение траекторий и времени возвращения для выборки толчков}
 
 корректировка траектории (offset/linear trend)
 
@@ -825,7 +874,7 @@ $$\text{Замена: }\eta=-l\theta; \quad T^2=\frac{J+mlh}{mgl};$$
 
 таблички, отношения времен real/opt
 
-\section{Гипотезы по корректировке задачи} 
+\section{Гипотезы по корректировке задачи}
 момент успел измениться, не максимальное а какое-то другое управление
 
 
@@ -836,8 +885,8 @@ $$\text{Замена: }\eta=-l\theta; \quad T^2=\frac{J+mlh}{mgl};$$
 
 \addcontentsline{toc}{chapter}{Заключение}
 
-\todo[inline]{Похоже немного на оптимальную траекторию, но много допущений, момент уже успел измениться, видимо мышцы не совсем так работают, нужны уточнения задачи, с различными постановками.  
-Управление взять в каком-то интервале, а так в целом хорошо построил решение.}
+\todo[inline]{Похоже немного на оптимальную траекторию, но много допущений, момент уже успел измениться, видимо мышцы не совсем так работают, нужны уточнения задачи, с различными постановками.
+    Управление взять в каком-то интервале, а так в целом хорошо построил решение.}
 
 В дипломной работе были представлены оптимальные алгоритмы управления
 движением позой при ступенчатом воздействии, основанные на модели
@@ -856,21 +905,21 @@ $$\text{Замена: }\eta=-l\theta; \quad T^2=\frac{J+mlh}{mgl};$$
 \addcontentsline{toc}{chapter}{Литература}
 
 \begin{thebibliography}{15}
-\bibitem{pandy}Pandy M.G., Zajac F.E., Sim E., Levine W.S. An optimal control model for maximum height human jumping// Journal of Biomechanics.-1990, vol. 23 – pp.1185-1198.
-\bibitem{humanMovements}Happee R. Time optimality in the control of human movements// Biological cybernetics- 1992, vol. 66 – pp. 357-366.
-\bibitem{AdaptFizkult}Слива С.С., Войнов И.Д., Слива А.С. Стабилоанализаторы в адаптивной физической культуре и спорте// IV Международная научная конференция по вопросам состояния и перспективам развития медицины в спорте высших достижений «СПОРТМЕД-2009» - М.: Экспоцентр, 2009.– С.121-123.
-\bibitem{stabilographTest}Муртазина Е.П. Функциональные особенности выполнения стабилографических тестов у испытуемых с различными антропометрическими данными // Известия ЮФУ. Технические науки.- 2009.-№9-С.123-127.
-\bibitem{pusher}Мельников А.А., Филёва В.В. Методика определения устойчивости вертикальной позы под влиянием внешнего толкающего воздействия // Физиология. 2015. С. 31–37.
-\bibitem{PAKrychinin}Кручинин П.А. Анализ результатов стабилометрических тестов со ступенчатым воздействием с точки зрения механики управляемых систем
-// Биофизика. – 2019. – Т. 64, №5. – С. 1–11.
-\bibitem{kasatkin} П. А. Кручинин и Е. А. Касаткин, Изв. ЮФУ.
-Техн. науки 10 (159), 254 (2014).
-\bibitem{gurfincel}Гурфинкель В.С., Коц Я.М., Шик М.Л. Регуляция позы человека - М.: Наука, 1965 - 256 с.
-\bibitem{Optimal} Александров В.В., Лемак С.С., Парусников Н.А. Лекции по механике управляемых систем. Москва, Механико-математический факультет МГУ, 2020, 165 с.
-\bibitem{feldbaum}Фельдбаум А.А. Основы теории оптимальных автоматических систем. М.: Физматгиз, 1963. 552 с.
-\bibitem{kurscah} Касаткин Е.А., Кручинин П.А. Оптимальное управление позой человека
+    \bibitem{pandy}Pandy M.G., Zajac F.E., Sim E., Levine W.S. An optimal control model for maximum height human jumping// Journal of Biomechanics.-1990, vol. 23 – pp.1185-1198.
+    \bibitem{humanMovements}Happee R. Time optimality in the control of human movements// Biological cybernetics- 1992, vol. 66 – pp. 357-366.
+    \bibitem{AdaptFizkult}Слива С.С., Войнов И.Д., Слива А.С. Стабилоанализаторы в адаптивной физической культуре и спорте// IV Международная научная конференция по вопросам состояния и перспективам развития медицины в спорте высших достижений «СПОРТМЕД-2009» - М.: Экспоцентр, 2009.– С.121-123.
+    \bibitem{stabilographTest}Муртазина Е.П. Функциональные особенности выполнения стабилографических тестов у испытуемых с различными антропометрическими данными // Известия ЮФУ. Технические науки.- 2009.-№9-С.123-127.
+    \bibitem{pusher}Мельников А.А., Филёва В.В. Методика определения устойчивости вертикальной позы под влиянием внешнего толкающего воздействия // Физиология. 2015. С. 31–37.
+    \bibitem{PAKrychinin}Кручинин П.А. Анализ результатов стабилометрических тестов со ступенчатым воздействием с точки зрения механики управляемых систем
+    // Биофизика. – 2019. – Т. 64, №5. – С. 1–11.
+    \bibitem{kasatkin} П. А. Кручинин и Е. А. Касаткин, Изв. ЮФУ.
+    Техн. науки 10 (159), 254 (2014).
+    \bibitem{gurfincel}Гурфинкель В.С., Коц Я.М., Шик М.Л. Регуляция позы человека - М.: Наука, 1965 - 256 с.
+    \bibitem{Optimal} Александров В.В., Лемак С.С., Парусников Н.А. Лекции по механике управляемых систем. Москва, Механико-математический факультет МГУ, 2020, 165 с.
+    \bibitem{feldbaum}Фельдбаум А.А. Основы теории оптимальных автоматических систем. М.: Физматгиз, 1963. 552 с.
+    \bibitem{kurscah} Касаткин Е.А., Кручинин П.А. Оптимальное управление позой человека
     при выполнении стабилометрической пробы со ступенчатым воздействием: Курсовая работа, Москва, 2014, 22 c.
-\bibitem{kruchPodoprihin} П.А. Кручинин, М.А. Подоприхин, И.Д. Бекеров Cравнительный анализ алгоритмов оценки движения
-центра масс по результатам стабилометрических измерений // Биофизика. – 2021. – Т. 66, №5. – С. 997–1004.
+    \bibitem{kruchPodoprihin} П.А. Кручинин, М.А. Подоприхин, И.Д. Бекеров Cравнительный анализ алгоритмов оценки движения
+    центра масс по результатам стабилометрических измерений // Биофизика. – 2021. – Т. 66, №5. – С. 997–1004.
 \end{thebibliography}
 \end{document}
