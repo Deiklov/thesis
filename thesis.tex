@@ -222,7 +222,7 @@
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\linewidth]{pendulum.png}
+    \includegraphics[width=0.4\linewidth]{body_1.png}
     \caption{Модель перевернутого маятника}
     \label{fig:pendulum}
 \end{figure}
@@ -660,13 +660,145 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
 \newpage
 \chapter{Определение начальных условий в момент завершения толчка}
 \section{Постановка задачи}
-
 вводим фильтр, рисуем модель физическую, переходные фукнции и алгоритмы фильтрации
+
+Для корректного решения задачи быстродействия необходимо как можно лучше оценить
+начальные условия в момент завершения толчка. Экспериментальные данные содержат только записи силомера
+и стабилоанализатора, поэтому определять начальные условия будем на основе данных с саггитальной стабилограммы и силомера.
+
+Рассмотрим силы действующие на модель стержня, иммитирующего тело человека (см. рисунок \ref{fig:pendulum})
+ и силы действующие на систему «стопы ног – платформа стабилоанализатора».
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{foot.png}
+    \caption{Силы действующие на на систему «стопы ног – платформа стабилоанализатора» }
+    \label{fig:foot-platform}
+\end{figure}
+
+Где $F$ – это внешняя толкающая сила, $y$ – саггитальная координата центра давления, $l_1$ – высота точки к которой прикладывается толкающая сила
+, $h$ – суммарная высота стопы и платформы стабилоанализатора, $N$ – нормальная реакция опоры
+
+Ниже представлена система уравнений соответствующая рисунку \ref{fig:pendulum}
+\begin{equation}\label{bodyforces}
+    \left\{ {\begin{aligned}
+                 & ml\ddot{\theta} = -R_y-F , \hfill   \\
+                 & 0=R_z-mg, \hfill \\
+                 & J \ddot{\theta} = mlg\sin \theta-Fl_1\cos \theta+M_x . \hfill             \\
+            \end{aligned}} \right.
+\end{equation}
+Проведем линеаризацию по $\theta$ в окрестности нуля
+\begin{equation}\label{bodyforces}
+    \left\{ {\begin{aligned}
+                 & ml\ddot{\theta} = -R_y-F , \hfill   \\
+                 & 0=R_z-mg, \hfill \\
+                 & J \ddot{\theta} = mlg\theta-Fl_1+M_x . \hfill             \\
+            \end{aligned}} \right.
+\end{equation}
+Ниже представлена система уравнений соответствующая рисунку \ref{fig:foot-platform}
+\begin{equation}\label{footforces}
+    \left\{ {\begin{aligned}
+                 & M_x = Ny+F_yh , \hfill   \\
+                 & F_y = R_y , \hfill \\
+                 & N \approx mg . \hfill             \\
+            \end{aligned}} \right.
+\end{equation}
+
+Из \eqref{bodyforces} и \eqref{footforces} выразим $M_x$
+$$M_x=mgy-h\left(F+ml\ddot{\theta}\right)$$
+
+$$\left(J+mlh\right)\ddot{\theta}=mgl\theta+mgy-Fl_1-Fh$$ 
+
+
+$$\frac{(J+mlh)l\ddot{\theta}}{mgl}=l\theta+y-\frac{F}{mg}(l_1+h);\quad $$
+$$\text{Замена: }\eta=-l\theta; \quad T^2=\frac{J+mlh}{mgl};$$
+
+\[
+    T^2\ddot{\eta}=\eta-y+\frac{F}{mg}(l_1+h)
+\]
+
+\begin{equation}\label{eta_y}
+    T^2\ddot{\eta}=\eta-(y-\frac{F}{mg}(l_1+h))
+\end{equation}
+Выражение \eqref{eta_y} можно свести к уравнению фильтра, путем корректировки входных данных $y$
+\begin{equation}\label{eta_y_clear}
+    T^2\ddot{\eta}=\eta-y
+\end{equation}
+Где $y$ - входные данные стабилоанализатора, $\eta$ выходные данные оценки координаты центра масс
+
+В работе \cite{kruchPodoprihin} получено такое же уравнение для связи центра масс и центра давления. Показано, что его решение неустойчиво и приводит к катастрофическому нарастанию ошибки оценки на временах больше 0.5c.
+
+Для использования предположения об отсутствии экспоненциальных составляющих, порожденных решением однородного уравнения, запишем передаточную функцию, соответствующую
+уравнению \eqref{eta_y_clear}
+\[
+    G(s)=-\dfrac{1}{T^2s^2-1}
+\]
+В работе \cite{kruchPodoprihin} приведены два способа фильтрации данных: через преобразование Фурье и через фильрацию в прямом и обратном времени.
 
 \section{Применение алгоритмов фильтрации к модельным данным}
 модель со спиральной вовзвращающей силой, графики
 
-применяем говорим, что методы очень точные
+Для оценки точности методов фильтрации проверим эти методы на модельных данных.
+Пусть наша система задается уравнением
+\[
+    J\ddot{\theta}=m_Tgl\theta+M-Fl_1
+\]
+Где $M$ - момент в голеностопном суставе
+Рассмотрим перевернутый маятник с спиральной пружиной в основании и вязким трением.
+Получим следующее выражение
+\begin{equation}\label{spiral_model}
+    J\ddot{\theta}=mgl\theta-C\theta-P\dot\theta-Fl
+\end{equation}
+Где $C$ и $P$ неизвестные коэффиценты.
+Подберем эти коэффиценты такими, чтобы \eqref{spiral_model} соответствовало затухающим колебаниям
+с периодом $T\approx2c$
+\begin{figure}[h!]
+    \begin{center}
+    \begin{minipage}[h]{0.48\linewidth}
+    \includegraphics[width=1\linewidth]{push_model.eps}
+    \caption{Пример зависимости \break $F(t)=5(1-\cos(4\pi\cdot2.5t))$}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[h]{0.48\linewidth}
+    \includegraphics[width=1\linewidth]{eta_model.eps}
+    \caption{Модельное движение центра масс и центра давления}
+    \end{minipage}
+    \end{center}
+    \end{figure}
+
+Восстановим $\eta$ двумя способами
+\begin{figure}[h!]
+    \begin{center}
+    \begin{minipage}[h]{0.48\linewidth}
+    \includegraphics[width=1\linewidth]{eta_restore_fur_model.eps}
+    \caption{Восстановление через преобразование Фурье}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[h]{0.48\linewidth}
+    \includegraphics[width=1\linewidth]{double_filter_model.eps}
+    \caption{Восстановление через двойную фильтрацию}
+    \end{minipage}
+    \end{center}
+    \end{figure}
+
+Оценим полученные ошибки при восстановлении
+
+\begin{figure}[h!]
+    \begin{center}
+    \begin{minipage}[h]{0.48\linewidth}
+    \includegraphics[width=1\linewidth]{err_furier_model.eps}
+    \caption{Ошибка восстановления через преобразвоание Фурье ,rmse=0.0761}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[h]{0.48\linewidth}
+    \includegraphics[width=1\linewidth]{err_double_filter_model.eps}
+    \caption{Восстановление через двойную фильтрацию, rmse=0.0061}
+    \end{minipage}
+    \end{center}
+    \end{figure}
+
+\todo[inline]{ошибка/макс модуль отклонения}
+
+Погрешности обоих методов очень небольшие, почти идеально восстанавливают исходную траекторию центра масс
 
 \section{Анализ данных со стабилоанализатора и силомера}
 массу, оценка времени где толчки были, сила
@@ -738,6 +870,7 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
 \bibitem{feldbaum}Фельдбаум А.А. Основы теории оптимальных автоматических систем. М.: Физматгиз, 1963. 552 с.
 \bibitem{kurscah} Касаткин Е.А., Кручинин П.А. Оптимальное управление позой человека
     при выполнении стабилометрической пробы со ступенчатым воздействием: Курсовая работа, Москва, 2014, 22 c.
-
+\bibitem{kruchPodoprihin} П.А. Кручинин, М.А. Подоприхин, И.Д. Бекеров Cравнительный анализ алгоритмов оценки движения
+центра масс по результатам стабилометрических измерений // Биофизика. – 2021. – Т. 66, №5. – С. 997–1004.
 \end{thebibliography}
 \end{document}
