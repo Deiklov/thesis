@@ -86,6 +86,7 @@
 }
 \usepackage{bm}
 \usepackage{todonotes}
+\usepackage{booktabs}
 \newcommand{\dd}{\mathrm{d}}
 \numberwithin{equation}{chapter}
 
@@ -613,26 +614,26 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
                  & (\Omega_0-u_*)\left( x^2z+\frac{x}{zx}\right)+u_*\left(\frac{x^3}{zx}+\frac{zx}{x}+\frac{2x^2}{zx}+2zx-4x\right)-\frac{x}{zx}+x^2z=0. \hfill \\
             \end{aligned}} \right.
 \end{equation}
-\begin{equation}\label{fullchanged1}
+\begin{equation}
     \left\{ {\begin{aligned}
                  & (\Omega_0-u_*)\left( x^2z-\frac{1}{z}\right)+u_*\left(\frac{x^2}{z}-z-\frac{2x}{z}+2zx\right)+\frac{1}{z}+x^2z=0, \hfill    \\
                  & (\Omega_0-u_*)\left( x^2z+\frac{1}{z}\right)+u_*\left(\frac{x^2}{z}+z+\frac{2x}{z}+2zx-4x\right)-\frac{1}{z}+x^2z=0. \hfill \\
             \end{aligned}} \right.
 \end{equation}
 Сложим и вычтем уравнения системы
-\begin{equation}\label{fullchanged2}
+\begin{equation}
     \left\{ {\begin{aligned}
                  & 2(\Omega_0-u_*)x^2z+u_*\left(2\frac{x^2}{z}+4zx-4x\right)+2x^2z=0, \hfill           \\
                  & 2(\Omega_0-u_*)\frac{1}{z}+u_*\left(2z+\frac{4x}{z}-4x\right)-\frac{2}{z}=0. \hfill \\
             \end{aligned}} \right.
 \end{equation}
-\begin{equation}\label{fullchanged2}
+\begin{equation}
     \left\{ {\begin{aligned}
                  & 2(\Omega_0-u_*)x^2z+u_*\left(2\frac{x^2}{z}+4zx-4x\right)+2x^2z=0, \hfill               \\
                  & 2(\Omega_0-u_*)\frac{1}{z}+2u_*z+4x\left(\frac{u_*}{z}-u_*\right)-\frac{2}{z}=0. \hfill \\
             \end{aligned}} \right.
 \end{equation}
-\begin{equation}\label{fullchanged2}
+\begin{equation}
     \left\{ {\begin{aligned}
                  & 2(\Omega_0-u_*)x^2z+u_*\left(2\frac{x^2}{z}+4zx-4x\right)+2x^2z=0, \hfill                       \\
                  & x=\left( \frac{1}{2z}-\frac{u_*z}{2}-(\Omega_0-u_*)\frac{1}{2z}\right)\frac{z}{u_*(1-z)} \hfill \\
@@ -641,19 +642,21 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
 \[
     \frac{\left(u_* \left(z^2-1\right)+\Omega _0-1\right) \left(-u_* \left(z^4+\Omega _0 \left(z^2-1\right)^2\right)+u_*^2 (z-1)^4+u_*-\Omega _0^2 z^2+z^2\right)}{2 u_*^2 (z-1)^2}=0
 \]
-\begin{equation}\label{fullchanged2}
+\begin{equation}
     \left[ {\begin{aligned}
                  & \left(u_* \left(z^2-1\right)+\Omega _0-1\right)=0, \hfill                                           \\
                  & -u_* \left(z^4+\Omega _0 \left(z^2-1\right)^2\right)+u_*^2 (z-1)^4+u_*-\Omega _0^2 z^2+z^2=0 \hfill \\
             \end{aligned}} \right.
 \end{equation}
-\begin{equation}\label{fullchanged2}
+\begin{equation}\label{final_polynom}
     \left[ {\begin{aligned}
                  & u_*z^2+\Omega _0-1-u_*=0, \hfill                                                                                               \\
                  & (-u_* \Omega _0+u_*^2-u_*)z^4-4 u_*^2z^3+(2 u_* \Omega _0+6 u_*^2-\Omega _0^2+1)z^2-4 u_*^2z+-u_* \Omega _0+u_*^2+u_*=0 \hfill \\
             \end{aligned}} \right.
 \end{equation}
 
+Дальнейшее решение строится на основе, перебора знака $u_\ast$, выбор знака + или - определяется на основании полученных корней,
+одно из решений явно будет не подходящим, исходя из физической реализации процесса.
 
 
 
@@ -824,20 +827,27 @@ $$\text{Замена: }\eta=-l\theta; \quad T^2=\frac{J+mlh}{mgl};$$
 
 Среднее значение рассчитаем по рисунку \ref{mass_short_time}, $m=67.8$кг
 
-Проанализируем силу толчков (см. рис. \ref{pushes_real}), сила толчка колеблется от 2 до 8 Н,
+Проанализируем силу толчков (см. рис. \ref{pushes_real}), сила толчка колеблется от 1 до 10 Н,
 в первую очередь возьмем толчки большей силы, так как на них предположительно лучше удастся провести исследование.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\linewidth]{pushes_real.eps}
-    \caption{Силовое воздействие на этапе наблюдения}
+    \caption{Силовое воздействие на интервале наблюдения}
     \label{pushes_real}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{y_real.eps}
+    \caption{Саггитальное отклонение центра давления при толчках}
+    \label{y_real}
 \end{figure}
 
 
 
 \section{Применение алгоритмов фильтрации к экспериментальным данным}
-Рассмотрим один конкретный толчок(около момента времени 1120) и для него применим два способа
+Рассмотрим один конкретный толчок (около момента времени 1120) и для него применим два способа
 фильтрации (см. рис. \ref{restore_double_real} и \ref{restore_fur_real})
 
 \begin{figure}[h!]
@@ -858,9 +868,61 @@ $$\text{Замена: }\eta=-l\theta; \quad T^2=\frac{J+mlh}{mgl};$$
 без каких-либо аномальных отклонений
 
 \section{Оценка начальных условий в моменты завершения толчков}
-посчитанные данные для нескольких толчков
 
-крутая картинка из матлаба
+В задаче быстродейтсвия присутсвует несколько неизвестных параметров:
+
+$m_T$ -  масса тела человека, $u_*$ - модуль оптимального управления,
+$t_*$ - коэффицент обезразмеривания времени,
+$\varphi_*\approx\varphi_0$ - характерное значение угла отклонения тела
+
+$m_T=67.8$кг
+
+$l=0.88$м
+
+$$t_\ast=\sqrt{\frac{J}{m_Tgl}}=\sqrt{\frac{1/3 \cdot m_T l^2}{m_Tgl}}=\sqrt{\frac{l}{3g}}$$
+\[
+    u^-=\frac{t_\ast U^-}{mgl\varphi_\ast },\ \ u^+=\frac{t_\ast U^+}{mgl\varphi_\ast}.
+\]
+$|U^+|=|U^-|=\dot M\approx \Delta M \cdot \nu, \text{ где } \nu - \text{частота дискретизации данных на стабилоанализаторе } $
+$\nu =50\text{Гц}$
+
+В работе \cite{kruchinMetoda} показано, что $\Delta y=\dfrac{\Delta M}{mg}$.
+
+Возьмем 5 толчков и по ним определим средний возникающий момент в голеностопе см. таблицу \ref*{moments_calculating}
+% Please add the following required packages to your document preamble:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{@{}|l|c|c|c|l|@{}}
+        \toprule
+          & \multicolumn{1}{l|}{xStart(сек)} & \multicolumn{1}{l|}{xEnd(сек)} & \multicolumn{1}{l|}{$\Delta Y$(мм)} & \multicolumn{1}{l|}{$\Delta M $(Н $\cdot$ м)} \\ \midrule
+        1 & 1098.9                           & 1099.3                         & 64.7                                & 43.1                                          \\ \midrule
+        2 & 1120.8                           & 1121.0                         & 61.5                                & 40.9                                          \\ \midrule
+        3 & 1133.2                           & 1133.6                         & 72.6                                & 48.3                                          \\ \midrule
+        4 & 1185.9                           & 1186.2                         & 65.18                               & 43.4                                          \\ \midrule
+        5 & 1277.8                           & 1278.0                         & 67.3                                & 44.7                                          \\ \bottomrule
+    \end{tabular}
+    \caption{Данные для расчета возникающего момента в голеностопе, см. рис. \ref{y_real} }
+    \label{moments_calculating}
+\end{table}
+
+Среднее значение $\Delta M=44.07$ Н$\cdot$м
+
+Среднее значение $U^+=\dfrac{\Delta M}{\Delta t}=144.7$ Н$\cdot$м/c $,\Delta t_i=xEnd_i-xStart_i$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.65\linewidth]{all_real.eps}
+    \caption{Определение начальных условий в момент завершения толчка}
+    \label{all_real}
+\end{figure}
+
+На рисунке \ref{all_real} представлены графики исходных данных, данные силомера, восстановленая траектория центра масс и ее первая производная, вычисленная как первая разность, умноженная на частоту дискретизации.
+
+Вертикальная ось - Н, мм, мм/с для соответствующих величин. Момент завершения толчка соответствует точке с абсциссой 245. В ней берем начальные условия:
+
+$\varphi_0=0.0292,\quad \omega_0=0.1490$
+
+На основе которых можем уже решать задачу быстродействия
 
 \newpage
 
@@ -868,11 +930,68 @@ $$\text{Замена: }\eta=-l\theta; \quad T^2=\frac{J+mlh}{mgl};$$
 
 \section{Сравнение траекторий и времени возвращения для выборки толчков}
 
-корректировка траектории (offset/linear trend)
+\todo[inline]{корректировка траектории (offset/linear trend)
+    картинки с траекториями, много, берем u=3.2 3.6 наиболее подходящее
+    таблички, отношения времен real/opt}
+Посчитаем безразмерное $u_\ast$
 
-картинки с траекториями, много, берем u=3.2 3.6 наиболее подходящее
+\[
+    u_\ast=\frac{t_\ast U^-}{mgl\varphi_\ast }=1.46
+\]
+При таком значении действительных корней уравнения \eqref{final_polynom} больших 1 нет,
+при обоих комбинациях знаков $u_\ast$.
 
-таблички, отношения времен real/opt
+Объяснение этому явлению такое: нервная система успела за время толчка среагировать и в голеностопе уже возник возвращающий момент, который не даст человеку упасть.
+Но в нашей постановке задачи, считается, что момент не успел возникнуть. Для корректировки завысим значение $u_\ast$ в $2-3$ раза.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{3_graphs.png}
+    \caption{Оптимальная траектории в безразмерном виде $u=3.2$ }
+    \label{3_graphs}
+\end{figure}
+
+Посторим полученные траектории для различных значений $u_\ast$(см. рис. \ref{final_graphs}, \ref{final_graphs_1}).
+
+Данные со стабилоанализатора, содержат погрешности, спокойное
+положение немного блуждает, поэтому скорреткируем координаты
+центра масс, на ее среднее значение до и после толчка. Корректировка представляет собой аналог
+ вычитания линейного тренда.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{final_graphs.eps}
+    \caption{Оптимальные(голубые) и реальные(оранжевые) траектории на возвратном движении человека отметка 1120}
+    \label{final_graphs}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{final_graphs_1.eps}
+    \caption{Оптимальные(голубые) и реальные(оранжевые) траектории на возвратном движении человека отметка 1130}
+    \label{final_graphs_1}
+\end{figure}
+
+Проведем аналогичный анализ для нескольких толчков,
+ результаты представлены в таблице \ref{final_table}.
+
+\todo[inline]{анализ таблицы}
+ 
+ \begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Номер толчка} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\ \hline
+    \textbf{$F_{max}$(Н)}       & 6.01  & 6.87  & 8.21  & 8.56  & 9.73  & 4.74  & 5.49  & 1.97  & 3.3   \\ \hline
+    \textbf{Время толчка(сек)}  & 0.26  & 0.26  & 0.26  & 0.26  & 0.26  & 0.26  & 0.26  & 0.26  & 0.26  \\ \hline
+    \textbf{$\varphi_0$}           & 0.026 & 0.028 & 0.033 & 0.033 & 0.035 & 0.022 & 0.018 & 0.008 & 0.007 \\ \hline
+    \textbf{$\omega_0$}   & 0.1490     & 0.1767     & 0.1689     & 0.1955     & 0.2139     & 0.0989     & 0.1453     & 0.0513     & 0.0786     \\ \hline
+    \textbf{Момент(кг*м)}       & 14.88 & 19.21 & 17.95 & 19.28 & 19.95 & 9.97  & 14.16 & 6.38  & 7.95  \\ \hline
+    \textbf{real/opt $u_*=3.2$} & 2.8   & 2.7   & 2.8   & 2.8   & 2.9   & 2.7   & 1.8   & 1.8   & 2.0   \\ \hline
+    \textbf{real/opt $u_*=3.6$} & 3.1   & 3.0   & 3.1   & 3.1   & 3.2   & 2.9   & 2.0   & 2.0   & 2.3   \\ \hline
+    \end{tabular}
+    \caption{Анализ различных толчков}
+    \label{final_table}
+    \end{table}
 
 \section{Гипотезы по корректировке задачи}
 момент успел измениться, не максимальное а какое-то другое управление
@@ -921,5 +1040,7 @@ $$\text{Замена: }\eta=-l\theta; \quad T^2=\frac{J+mlh}{mgl};$$
     при выполнении стабилометрической пробы со ступенчатым воздействием: Курсовая работа, Москва, 2014, 22 c.
     \bibitem{kruchPodoprihin} П.А. Кручинин, М.А. Подоприхин, И.Д. Бекеров Cравнительный анализ алгоритмов оценки движения
     центра масс по результатам стабилометрических измерений // Биофизика. – 2021. – Т. 66, №5. – С. 997–1004.
+    \bibitem{kruchinMetoda} П.А. Кручинин Исследование колебаний человека при
+    спокойном стоянии //Задача спецпрактикума по теоретической и прикладной механике. Изд-во мех.-мат. ф-та МГУ, 2022, 36 c.
 \end{thebibliography}
 \end{document}
