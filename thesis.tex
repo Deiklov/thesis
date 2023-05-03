@@ -477,7 +477,7 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
 при переходе между которыми меняется управление.
 
 Решая систему \eqref{koshisystem}, получим
-\todo[inline]{нормальный вид системы привести}
+
 \begin{equation}\label{solvekoshi}
     \left\{ {\begin{aligned}
                  & m(\tau) = \tau u+C_1, \hfill                                                            \\
@@ -717,10 +717,79 @@ $\tau=\tau_2$. Рассмотрим систему \eqref{koshisystem} на тр
 
 Дальнейшее решение строится на основе перебора знака $u_\ast$, выбор знака + или - определяется на основании полученных корней,
 одно из решений явно будет не подходящим, исходя из физической реализации процесса.
+\section{Решение задачи быстродействия при $n<2$ переключений управления}
+Пусть в системе \eqref{koshisystem} \textbf{нет переключений управления}, тогда 
+\[
+    m(\tau) = \tau u, 
+\]
+$m(\tau_f)=0$, тогда либо $u\equiv0$, либо $\tau=0$, чего не может быть, так как тогда решение \eqref{koshisystem} будет неограниченно возрастать
 
+Пусть в системе \eqref{koshisystem} \textbf{одно переключение управления}, тогда пусть переключение идет в момент времени $\tau_1$.
 
+Этап 1. $u=-u_*$ начальные условия
+\[
+    m(0)=0;\ \theta(0)=1;\ \omega(0)=\Omega_0;
+\]
+\begin{equation}\label{solvekoshi}
+    \left\{ {\begin{aligned}
+                 & m_1(\tau) = u_* \tau, \hfill                                                            \\
+                 & \theta_1(\tau) = \frac{1}{2} e^{\tau } \left(-u_*+\Omega _0+1\right)+\frac{1}{2} e^{-\tau } \left(u_*-\Omega _0+1\right)+\tau  u_*, \hfill                                                          \\
+                 & \omega_1(\tau) = \frac{1}{2} e^{-\tau } \left(-u_*+\Omega _0-1\right)+\frac{1}{2} e^{\tau } \left(-u_*+\Omega _0+1\right)+u_*. \hfill                                                               \\
+            \end{aligned}} \right.
+\end{equation}
 
-\newpage
+Этап 2. $u=u_*$ конечные условия
+\[
+    m(\tau_f)=0; \ \theta(\tau_f)=0;\ \omega(\tau_f)=0;
+\]
+\begin{equation}\label{solvekoshi}
+    \left\{ {\begin{aligned}
+                 & m_2(\tau) = u_* \left(\tau-\tau _f\right), \hfill                                                            \\
+                 & \theta_2(\tau) = \frac{1}{2} u_* e^{\tau -\tau _f}-\frac{1}{2} u_* e^{\tau _f-\tau }+\frac{1}{2} u_* \left(2 \tau _f-2 \tau \right), \hfill                                                          \\
+                 & \omega_2(\tau) = \frac{1}{2} u_* e^{\tau -\tau _f}+\frac{1}{2} u_* e^{\tau _f-\tau }-u_*. \hfill                                                               \\
+            \end{aligned}} \right.
+\end{equation}
+
+Сопряжем 1 и 2 этапы из условия
+\[
+    \left\{ {\begin{aligned}
+                 & m_1(\tau_1) = m_2(\tau_1), \hfill            \\
+                 & \theta_1(\tau_1) =  \theta_2(\tau_1), \hfill \\
+                 & \omega_1(\tau_1) = \omega_2(\tau_1) . \hfill \\
+            \end{aligned}} \right.
+\]
+Получим
+\[
+    \left\{ {\begin{aligned}
+                 & 2 \tau _1 u_*=u_* \tau _f, \hfill            \\
+                 & -u_* e^{\tau _1-\tau _f}+u_* e^{\tau _f-\tau _1}-2 u_* \tau _f-e^{-\tau _1} \Omega _0+e^{\tau _1} \Omega _0+e^{-\tau _1}+e^{\tau _1}+e^{-\tau _1} u_*-e^{\tau _1} u_*+4 \tau _1 u_*=0, \hfill \\
+                 & u_* e^{\tau _1-\tau _f}+u_* e^{\tau _f-\tau _1}-e^{-\tau _1} \Omega _0-e^{\tau _1} \Omega _0+e^{-\tau _1}-e^{\tau _1}+e^{-\tau _1} u_*+e^{\tau _1} u_*-4 u_*=0. \hfill \\
+            \end{aligned}} \right.
+\]
+Подставим первое уравнение $\tau_f=2\tau_1$ во второе и третье
+\begin{equation}\label{1_control_syst}
+    \left\{ {\begin{aligned}
+                 & 2 \tau _1=\tau _f, \hfill            \\
+                 & e^{-\tau _1} \left(1-\Omega _0\right)+e^{\tau _1} \left(\Omega _0+1\right)=0, \hfill \\
+                 & e^{\tau _1} \left(2 u_*-\Omega _0-1\right)+e^{-\tau _1} \left(2 u_*-\Omega _0+1\right)-4 u_*=0. \hfill \\
+            \end{aligned}} \right.
+\end{equation}
+            
+Сделаем замену $e^{\tau_1}=x;\quad e^{\tau_f}=z$
+
+Тогда \eqref{1_control_syst} примет вид
+\begin{equation}\label{1_control_syst_subst}
+    \left\{ {\begin{aligned}
+                 & x^2 == z, \hfill            \\
+                 & \dfrac{1}{x}(1-\Omega_0)+x(1+\Omega_0)=0, \hfill \\
+                 & x \left(2 u_*-\Omega _0-1\right)+\dfrac{1}{x}\left(2 u_*-\Omega _0+1\right)-4 u_*=0. \hfill \\
+            \end{aligned}} \right.
+\end{equation}
+
+Из второго уравнения \eqref{1_control_syst_subst} получим
+$$x^2=\dfrac{\Omega_0-1}{\Omega_0+1}=1-\dfrac{2}{1+\Omega_0}$$
+
+так как $\Omega_0>0$, то $x<1$, чего не может быть.
 \chapter{Определение начальных условий в момент завершения толчка}
 \section{Постановка задачи}
 Для корректного решения задачи быстродействия необходимо как можно лучше оценить
