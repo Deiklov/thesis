@@ -15,7 +15,7 @@
 \usepackage{lipsum}
 %\usepackage{rumathgrk1}
 \usepackage{booktabs}
-
+\usepackage{cancel}  % для зачекивания текста
 %\usepackage{glonti}
 \defbeamertemplate*{footline}{Warsaw} {%
 \leavevmode%
@@ -76,7 +76,7 @@ Reversion of initial posture by a person after a push}}
 	\begin{columns}
 		\column{0.55\textwidth}
 		\begin{figure}[h!]
-			\includegraphics[width=1\linewidth]{images/trajectory.png}
+			\includegraphics[width=1.1\linewidth]{images/center_of_pressure.eps}
 			\caption{Характерный вид сагиттальной стабилограммы при выполнении теста с толчком в спину}
 		\end{figure}
 		\column{0.6\textwidth}
@@ -129,8 +129,14 @@ Reversion of initial posture by a person after a push}}
 			M(0)=M(t_k)=-m_Tgl\varphi_k
 		\]
 		\[
-			U^-\leq\dot{M}\leq U^+
+			U^-\leqslant\dot{M}\leqslant U^+
 		\]
+		\[
+			\cancel{M^-\leqslant M\leqslant\ M^+.}
+		\]
+
+
+
 	\end{columns}
 \end{frame}
 \begin{frame}{Обезразмеривание}
@@ -368,21 +374,22 @@ Reversion of initial posture by a person after a push}}
 	\[
 		T \dot{\eta}-\eta=x \text{ в обратном времени}
 	\]
-
+	\hrule
+Алгоритм фильтрации с использованием преобразования Фурье представлен в тексте дипломной работы
 \end{frame}
 
-\begin{frame}{Алгоритм фильтрации с использованием преобразования Фурье}
-	$Y(\omega),N(\omega) - \text{Фурье образы y(t) и $\eta$(t)}$
-	\[
-		N(\omega)=G(i\omega)\cdot Y(\omega)
-	\]
-	Представим $y(t)=a(t-t_0)+b+\delta(t)$
+% \begin{frame}{Алгоритм фильтрации с использованием преобразования Фурье}
+% 	$Y(\omega),N(\omega) - \text{Фурье образы y(t) и $\eta$(t)}$
+% 	\[
+% 		N(\omega)=G(i\omega)\cdot Y(\omega)
+% 	\]
+% 	Представим $y(t)=a(t-t_0)+b+\delta(t)$
 
-	$a=\frac{y(t_f)-y(t_0)}{t_f-t_0}, b=y(t_0)$, тогда оценка координаты центра масс может быть найдена из
+% 	$a=\frac{y(t_f)-y(t_0)}{t_f-t_0}, b=y(t_0)$, тогда оценка координаты центра масс может быть найдена из
 
-	$\eta(t)=a(t-t_0)+b+\chi(t)$, где $\chi(t)$ - Фурье праобраз $N(\omega)$
+% 	$\eta(t)=a(t-t_0)+b+\chi(t)$, где $\chi(t)$ - Фурье праобраз $N(\omega)$
 
-\end{frame}
+% \end{frame}
 
 
 \begin{frame}{Оценка центра масс с использованием обоих фильтров}
@@ -391,14 +398,14 @@ Reversion of initial posture by a person after a push}}
 		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=1\linewidth]{restore_eta_double_real.eps}
-			\caption{Восстановление с использованием двойной фильтрации $\sigma=7.9$}
+			\caption{Восстановление с использованием двойной фильтрации}
 			\label{restore_double_real}
 		\end{figure}
 		\column{0.5\textwidth}
 		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=1\linewidth]{restore_eta_fur_real.eps}
-			\caption{Восстановление с использованием преобразования Фурье $\sigma=3.0$}
+			\caption{Восстановление с использованием преобразования Фурье}
 			\label{restore_fur_real}
 		\end{figure}
 	\end{columns}
@@ -406,7 +413,7 @@ Reversion of initial posture by a person after a push}}
 \begin{frame}{Определение начальных условий}
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.9\linewidth]{bold_combo.eps}
+		\includegraphics[width=0.9\linewidth]{images/modif_legend.eps}
 		\caption{К определению начальных условий}
 		\label{restore_double_real}
 	\end{figure}
@@ -440,9 +447,9 @@ Reversion of initial posture by a person after a push}}
 			\textbf{Номер толчка}       & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\ \hline
 			\textbf{$F_{max}$(Н)}       & 6.01       & 6.87       & 8.21       & 8.56       & 9.73       & 4.74       & 5.49       & 1.97       & 3.3        \\ \hline
 			\textbf{Время толчка(сек)}  & 0.26       & 0.26       & 0.26       & 0.26       & 0.26       & 0.26       & 0.26       & 0.26       & 0.26       \\ \hline
-			\textbf{$\varphi_0$ рад}        & 0.026      & 0.028      & 0.033      & 0.033      & 0.035      & 0.022      & 0.018      & 0.008      & 0.007      \\ \hline
-			\textbf{$\omega_0$ рад/с}         & 0.15     & 0.18     & 0.17     & 0.20     & 0.21     & 0.10     & 0.15     & 0.05     & 0.08     \\ \hline
-			\textbf{Момент(Н$\cdot$м)}       & 14.88      & 19.21      & 17.95      & 19.28      & 19.95      & 9.97       & 14.16      & 6.38       & 7.95       \\ \hline
+			\textbf{$\varphi_0$ рад}    & 0.026      & 0.028      & 0.033      & 0.033      & 0.035      & 0.022      & 0.018      & 0.008      & 0.007      \\ \hline
+			\textbf{$\omega_0$ рад/с}   & 0.15       & 0.18       & 0.17       & 0.20       & 0.21       & 0.10       & 0.15       & 0.05       & 0.08       \\ \hline
+			\textbf{Момент(Н$\cdot$м)}  & 14.88      & 19.21      & 17.95      & 19.28      & 19.95      & 9.97       & 14.16      & 6.38       & 7.95       \\ \hline
 			\textbf{real/opt $u_*=3.2$} & 2.8        & 2.7        & 2.8        & 2.8        & 2.9        & 2.7        & 1.8        & 1.8        & 2.0        \\ \hline
 			\textbf{real/opt $u_*=3.6$} & 3.1        & 3.0        & 3.1        & 3.1        & 3.2        & 2.9        & 2.0        & 2.0        & 2.3        \\ \hline
 		\end{tabular}
@@ -452,17 +459,17 @@ Reversion of initial posture by a person after a push}}
 \end{frame}
 \begin{frame}
 	В ходе работы:
-\begin{itemize}
-    \item Показано, что решение оптимальной задачи быстродействия при ограниченной
-          скорости изменения момента в голеностопном суставе может иметь решение, которое качественно совпадает с картиной, наблюдаемой в стабилометрических исследованиях;
-    \item Представлено аналитическое решение задачи быстродействия;
-    \item Найдены начальные условия в момент завершения толчка, с помощью метода двойной фильтрации;
-    \item Время необходимое для восстановления исходной позы получилось
-          соизмеримым с реальным времени возвращения после толчка;
-    \item Проведен анализ допущений, которые могут скорректировать соответствие математической модели и реального процесса.
-\end{itemize}
+	\begin{itemize}
+		\item Показано, что решение оптимальной задачи быстродействия при ограниченной
+		      скорости изменения момента в голеностопном суставе может иметь решение, которое качественно совпадает с картиной, наблюдаемой в стабилометрических исследованиях;
+		\item Представлено аналитическое решение задачи быстродействия;
+		\item Найдены начальные условия в момент завершения толчка, с помощью метода двойной фильтрации;
+		\item Время необходимое для восстановления исходной позы получилось
+		      соизмеримым с реальным времени возвращения после толчка;
+		\item Проведен анализ допущений, которые могут скорректировать соответствие математической модели и реального процесса.
+	\end{itemize}
 \end{frame}
 \begin{frame}
-    \centering{{\huge Спасибо за внимание!}}
+	\centering{{\huge Спасибо за внимание!}}
 \end{frame}
 \end{document}
