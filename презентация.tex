@@ -57,7 +57,7 @@ Reversion of initial posture by a person after a push}}
 	\begin{figure}[h!]
 		\begin{center}
 			\begin{minipage}[h]{0.33\linewidth}
-				\includegraphics[width=1\linewidth]{images/human2.png}
+				\includegraphics[width=0.68\linewidth]{images/human_3.png}
 				\caption{Схематическое изображение толкателя
 					и положения испытуемого на стабилоплатформе}
 			\end{minipage}
@@ -92,18 +92,26 @@ Reversion of initial posture by a person after a push}}
 	\end{columns}
 \end{frame}
 
-\begin{frame}[shrink=8]{Список литературы с похожими исследованиями}
+\begin{frame}[shrink=8]{Список литературы с опорными исследованиями}
+	Разбор аналогичной задачи
 	\begin{thebibliography}{15}
+		\setbeamertemplate{bibliography item}[book]
 		\bibitem{PAKrychinin}П.А. Кручинин Анализ результатов стабилометрических тестов со ступенчатым воздействием с точки зрения механики управляемых систем
 		// Биофизика. – 2019. – Т. 64, №5. – С. 1–11.
-		\bibitem{podoprihin}П.А. Кручинин, М.А. Подоприхин, И.Д. Бекеров Сравнительный анализ алгоритмов оценки движения центра масс по результатам стабилометрических измерений // Биофизика – 2021. – Т. 66, №5. – С. 997–1004.
-		\bibitem{melnikov}А.А. Мельников, В.В. Филева, М.В. Малахов Эффективность восстановления вертикальной позы
-		после толчка у спортсменов разных специализаций // Физиоилогия человека. – 2017. – Т. 43, №4. – С. 78–85.
-		\bibitem{melnikov2}А.А. Мельников, В.В. Филева Методика определения устойчивости вертикальной позы под влиянием
-		внешнего толкающего воздействия // Вестник северного (арктического) федерального университета. – 2015. №1. – С. 31–37.
+	\end{thebibliography}
+
+	Исследования в которых был такой же тест
+	\begin{thebibliography}{15}
+		\setbeamertemplate{bibliography item}[book]
 		\bibitem{saenko}Д. Г. Саенко, А. А. Артамонов, И. Б. Козловская Характеристики позных коррекционных ответов
 		до и после длительных космических полетов // Физиология человека. – 2011. – Т. 37, №5. – С. 91–99.
+		\bibitem{melnikov2}А.А. Мельников, В.В. Филева Методика определения устойчивости вертикальной позы под влиянием
+		внешнего толкающего воздействия // Вестник северного (арктического) федерального университета. – 2015. №1. – С. 31–37.
+		\bibitem{melnikov}А.А. Мельников, В.В. Филева, М.В. Малахов Эффективность восстановления вертикальной позы
+		после толчка у спортсменов разных специализаций // Физиоилогия человека. – 2017. – Т. 43, №4. – С. 78–85.
+
 	\end{thebibliography}
+
 \end{frame}
 
 \begin{frame}{Математическая модель}
@@ -126,7 +134,7 @@ Reversion of initial posture by a person after a push}}
 			\varphi(t)=\varphi_k,\, \dot{\varphi}(t_k)=0
 		\]
 		\[
-			M(0)=M(t_k)=-m_Tgl\varphi_k
+			M(0)=M(t_k)=-m_Tgl_1\varphi_k
 		\]
 		\[
 			U^-\leqslant\dot{M}\leqslant U^+
@@ -377,8 +385,6 @@ Reversion of initial posture by a person after a push}}
 	\[
 		T \dot{\eta}-\eta=x \text{ в обратном времени}
 	\]
-	\hrule
-Алгоритм фильтрации с использованием преобразования Фурье представлен в тексте дипломной работы
 \end{frame}
 
 % \begin{frame}{Алгоритм фильтрации с использованием преобразования Фурье}
@@ -416,7 +422,7 @@ Reversion of initial posture by a person after a push}}
 \begin{frame}{Определение начальных условий}
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\linewidth]{images/full_init.eps}
+		\includegraphics[width=1\linewidth]{images/cp3_bold.eps}
 		\caption{К определению начальных условий}
 		\label{restore_double_real}
 	\end{figure}
@@ -427,7 +433,7 @@ Reversion of initial posture by a person after a push}}
 	при обоих комбинациях знаков $u_\ast$.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.7\linewidth]{3_graphs.png}
+		\includegraphics[width=0.7\linewidth]{3_graphs.jpeg}
 		\caption{Оптимальная траектории в безразмерном виде $u_\ast=3.2$ }
 		\label{3_graphs}
 	\end{figure}
